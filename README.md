@@ -70,6 +70,7 @@ Los endpoints en la siguiente imagen, se describen a continuacion:
                            (username: Nombre de usuario utilizado para identificar al usuario en la base de datos.
                             - Si el rol del usuario no es 'admin', se obtienen los datos específicos del rol (films, people, locations, species, vehicles).
                             - Si el rol del usuario es 'admin', se obtienen los datos de todos los roles combinados.)
+![Listado de funciones](https://github.com/vicogarcia16/challenge_banpay/blob/master/images/endpoints.jpeg)
 
 ## Coverage
 

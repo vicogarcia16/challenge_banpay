@@ -49,7 +49,6 @@ species, vehicles) y se consumen datos con un GET de Studio Ghibli API, de acuer
 1. Si has construido la imagen Docker, ejecuta el contenedor creado llamado "fastapi-app".
 2. Luego, abre el navegador y accede a la URL: http://localhost:8000
 ### Autenticación
-### Autenticación
 * Para tener autorización sobre los endpoints protegidos 🧷:, se debe registrar un usuario y posteriormente loguearse.
 ![Endpoints protegidos](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/protegidos.jpeg)
 * Esto se realiza, para recibir el token de acceso (Nota: Dicho access token caduca a los 10 minutos y el refresh token caduca en 7 días)

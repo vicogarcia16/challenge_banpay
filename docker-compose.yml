@@ -3,39 +3,46 @@ version: '3.9'
 services:
 
   db:
-    
-    image: postgres
+    image: postgres:15-alpine
     restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=db_banpay
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     expose: 
-      - 5432
+      - ${DB_PORT}:5432
     networks:
-      - fastapi-network
+      - app-network
 
-  challenge_banpay:
-    image: "tiangolo/uvicorn-gunicorn-fastapi:python3.11"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     depends_on:
       - db
-    build: .
-    command: uvicorn main:app --host 0.0.0.0 --port 8000
     ports:
-      - "8000:8000"  
-    volumes:
-      - .:/app
-    working_dir: /app
-    container_name: micro-service-fastapi
+      - "8000:8000"
+    container_name: fastapi-app
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALGORITHM=${ALGORITHM}
+      - ORIGINS=${ORIGINS}
+      - BASE_URL=${BASE_URL}
+    env_file:
+      - .env
     networks:
-      - fastapi-network
+      - app-network
 
 networks: 
-  fastapi-network:
+  app-network:
     driver: bridge
-
 
 volumes:
   postgres_data:

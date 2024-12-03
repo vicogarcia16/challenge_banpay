@@ -61,6 +61,7 @@
 ## Endpoints
 
 Los endpoints en la siguiente imagen, se describen a continuacion:
+![Listado de funciones](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/endpoints.jpeg)
 * authentication
    * POST
      * /login/ - Recibe un nombre de usuario y una contraseña y devuelve un token de acceso si el usuario existe en la base de datos.
@@ -80,14 +81,14 @@ Los endpoints en la siguiente imagen, se describen a continuacion:
     * /ghibli/{username} - Obtiene los datos de Studio Ghibli según el rol del usuario:
                            (username: Nombre de usuario utilizado para identificar al usuario en la base de datos.
                             - Si el rol del usuario no es 'admin', se obtienen los datos específicos del rol (films, people, locations, species, vehicles).
-                            - Si el rol del usuario es 'admin', se obtienen los datos de todos los roles combinados.)
-![Listado de funciones](https://github.com/vicogarcia16/challenge_banpay/blob/master/images/endpoints.jpeg)
+                            - Si el rol del usuario es 'admin', se obtienen los datos de todos los roles combinados.
 
 ## Coverage
 
 La cobertura del codigo que comprende las pruebas unitarias, se ha realizado al tiempo que se actualiza esta información. Nota: Para mas detalle, ir a la seccion Ejecucion del Software y ejecutar de manera local, el comando a elegir para mostrar el reporte.
+![Coverage](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/coverage.jpeg)
 
-# Demostración de funcionalidad
+## Demostración de funcionalidad
 
 
 

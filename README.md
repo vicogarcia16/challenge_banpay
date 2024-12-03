@@ -57,7 +57,7 @@ species, vehicles) y se consumen datos con un GET de Studio Ghibli API, de acuer
 * Con ello, se registra el token en [Authorize] de la documentación Swagger UI para poder hacer usos de los endpoints protegidos.
 ![Token](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/token.jpeg)
 * Si se quiere ejecutar los endpoints con Postman o Imsomnia. Insertar el token en Authorization.
-![Postman](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/postman.jpeg)
+![Postman](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/postman.JPG)
 
 ## Endpoints
 

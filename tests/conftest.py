@@ -5,6 +5,7 @@ from main import app
 from db.models import DbUser
 from db.database import get_db
 from schemas.user import RoleEnum
+from tools.hashing import Hash
 
 @pytest.fixture
 def mock_db_session():
@@ -34,8 +35,9 @@ def client(mock_db_session):
 
 @pytest.fixture
 def user_data(mock_db_session):
+    hashed_password = Hash.argon2("password123")
     mock_db_session.query().filter().first.return_value = DbUser(
-        id=1, username="user1", email="user1@example.com", password="password123", role="admin"
+        id=1, username="user1", email="user1@example.com", password=hashed_password, role="admin"
     )
     
     return {

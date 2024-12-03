@@ -1,0 +1,20 @@
+# .dockerignore
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+env/
+*.env
+*.env.example
+*.git
+*.gitignore
+*.md
+*.log
+*.csv
+README.md
+Dockerfile
+docker-compose.yml
+pipfile
+pipfile.lock
+.coverage
+coverage_report/

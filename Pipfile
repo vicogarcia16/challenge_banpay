@@ -1,0 +1,34 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+sqlalchemy = "*"
+passlib = "*"
+argon2-cffi = "*"
+python-dotenv = "*"
+gunicorn = "*"
+psycopg2 = "*"
+requests = "*"
+pyjwt = "*"
+pytest = "*"
+httpx = "*"
+pydantic = {extras = ["email"], version = "*"}
+coverage = "*"
+
+[dev-packages]
+
+[scripts]
+server = "uvicorn main:app --reload"
+test = "pytest -p no:warnings -v"
+coverage = "coverage run -m pytest -p no:warnings -v"
+coverage_erase = "coverage erase"
+coverage_report = "coverage report -m"
+coverage_html = "coverage html -d coverage_report"
+coverage_open = "start coverage_report/index.html"
+
+[requires]
+python_version = "3.11"

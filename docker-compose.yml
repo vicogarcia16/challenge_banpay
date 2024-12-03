@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+
+  db:
+    
+    image: postgres
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db_banpay
+    expose: 
+      - 5432
+    networks:
+      - fastapi-network
+
+  challenge_banpay:
+    image: "tiangolo/uvicorn-gunicorn-fastapi:python3.11"
+    depends_on:
+      - db
+    build: .
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"  
+    volumes:
+      - .:/app
+    working_dir: /app
+    container_name: micro-service-fastapi
+    networks:
+      - fastapi-network
+
+networks: 
+  fastapi-network:
+    driver: bridge
+
+
+volumes:
+  postgres_data:

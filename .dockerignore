@@ -18,3 +18,4 @@ pipfile
 pipfile.lock
 .coverage
 coverage_report/
+images/

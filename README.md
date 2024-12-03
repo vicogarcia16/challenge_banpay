@@ -46,6 +46,17 @@
 ### Docker
 1. Si has construido la imagen Docker, ejecuta el contenedor creado llamado "fastapi-app".
 2. Luego, abre el navegador y accede a la URL: http://localhost:8000
+### Autenticación
+### Autenticación
+* Para tener autorización sobre los endpoints protegidos :save:, se debe registrar un usuario y posteriormente loguearse.
+![Endpoints protegidos]()
+* Esto se realiza, para recibir el token de acceso (Nota: Dicho access token caduca a los 10 minutos y el refresh token caduca en 7 días)
+![Login]()
+* Con ello, se registra el token en [Authorize] de la documentación Swagger UI para poder hacer usos de los endpoints protegidos.
+![Token]()
+![Token check]()
+* Si se quiere ejecutar los endpoints con Postman o Imsomnia. Insertar el token en Authorization.
+![Postman]()
 
 ## Endpoints
 

@@ -1,10 +1,20 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from db import models
 from db.database import engine
 from routers import user, ghibli, auth
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
+from tools.exceptions import (
+    UserNotFoundError, 
+    InvalidCredentialsError, 
+    TokenExpiredError,
+    NoUsersFoundError,
+    UsernameTakenError,
+    EmailTakenError
+)
+
 load_dotenv() 
 
 app = FastAPI(
@@ -29,3 +39,51 @@ app.add_middleware(
 )
 
 models.Base.metadata.create_all(engine)
+
+@app.exception_handler(UserNotFoundError)
+async def user_not_found_exception_handler(request: Request, 
+                                           exc: UserNotFoundError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail}
+    )
+
+@app.exception_handler(InvalidCredentialsError)
+async def invalid_credentials_exception_handler(request: Request, 
+                                                exc: InvalidCredentialsError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail}
+    )
+
+@app.exception_handler(TokenExpiredError)
+async def token_expired_exception_handler(request: Request, 
+                                          exc: TokenExpiredError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail}
+    )
+
+@app.exception_handler(NoUsersFoundError)
+async def no_users_found_exception_handler(request: Request, 
+                                           exc: NoUsersFoundError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail}
+    )
+
+@app.exception_handler(UsernameTakenError)
+async def username_taken_exception_handler(request: Request, 
+                                           exc: UsernameTakenError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail}
+    )
+
+@app.exception_handler(EmailTakenError)
+async def email_taken_exception_handler(request: Request, 
+                                        exc: EmailTakenError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail}
+    )

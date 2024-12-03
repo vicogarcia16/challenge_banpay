@@ -1,4 +1,6 @@
 # Challenge Banpay :bank:
+Creación e implementación de una REST API que expone un CRUD de usuarios. Los usuarios deben tener un rol (admin, films, people, locations, 
+species, vehicles) y se consumen datos con un GET de Studio Ghibli API, de acuerdo a su rol.
 
 ## Pre requisitos :pushpin:
 
@@ -48,15 +50,14 @@
 2. Luego, abre el navegador y accede a la URL: http://localhost:8000
 ### Autenticación
 ### Autenticación
-* Para tener autorización sobre los endpoints protegidos :save:, se debe registrar un usuario y posteriormente loguearse.
-![Endpoints protegidos]()
+* Para tener autorización sobre los endpoints protegidos 🧷:, se debe registrar un usuario y posteriormente loguearse.
+![Endpoints protegidos](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/protegidos.jpeg)
 * Esto se realiza, para recibir el token de acceso (Nota: Dicho access token caduca a los 10 minutos y el refresh token caduca en 7 días)
-![Login]()
+![Login](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/auth.jpeg)
 * Con ello, se registra el token en [Authorize] de la documentación Swagger UI para poder hacer usos de los endpoints protegidos.
-![Token]()
-![Token check]()
+![Token](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/token.jpeg)
 * Si se quiere ejecutar los endpoints con Postman o Imsomnia. Insertar el token en Authorization.
-![Postman]()
+![Postman](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/postman.jpeg)
 
 ## Endpoints
 

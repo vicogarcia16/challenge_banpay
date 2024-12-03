@@ -88,10 +88,6 @@ Los endpoints en la siguiente imagen, se describen a continuacion:
 La cobertura del codigo que comprende las pruebas unitarias, se ha realizado al tiempo que se actualiza esta información. Nota: Para mas detalle, ir a la seccion Ejecucion del Software y ejecutar de manera local, el comando a elegir para mostrar el reporte.
 ![Coverage](https://github.com/vicogarcia16/challenge_banpay/blob/main/images/coverage.jpeg)
 
-## Demostración de funcionalidad
-
-
-
 ## Tecnologías Utilizadas 🛠️
 * [Python](https://www.python.org/) - Lenguaje de programación
 * [PostgreSQL](https://www.postgresql.org/) - Base de datos

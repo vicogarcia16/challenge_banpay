@@ -38,7 +38,7 @@ species, vehicles) y se consumen datos con un GET de Studio Ghibli API, de acuer
     ```bash 
     pipenv run server
 3. Accede a la aplicación a través de la URL por defecto: http://127.0.0.1:8000.
-4. Comandos adicionales usados como  `pipenv run [comando]`:
+4. Comandos adicionales usados como  `pipenv run [comando]` (Nota: Abrir pipfile, si se desea ejecutar manualmente los comandos sin pipenv):
     * test: Ejecuta las pruebas unitarias.
     * coverage: Muestra la cobertura de las pruebas.
     * coverage_erase: Resetea la cobertura de pruebas.

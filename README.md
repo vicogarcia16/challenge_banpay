@@ -23,7 +23,7 @@ species, vehicles) y se consumen datos con un GET de Studio Ghibli API, de acuer
 
 1. Si deseas ejecutar el proyecto en Docker, ejecuta el siguiente comando en una ventana de terminal:
    ```bash
-   docker-compose up -d
+   docker compose up --build
 
 ## Variables de entorno
 1. El archivo .env.example es un ejemplo de como se debe configurar el archivo .env.

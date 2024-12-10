@@ -12,7 +12,7 @@ router = APIRouter(
 )
 
 @router.get("/{username}/")
-def get_ghibli_data_by_username(username: str, db: Session = Depends(get_db)):
+async def get_ghibli_data_by_username(username: str, db: Session = Depends(get_db)):
     """
     Obtiene los datos de Studio Ghibli según el rol del usuario.
 
@@ -22,5 +22,5 @@ def get_ghibli_data_by_username(username: str, db: Session = Depends(get_db)):
     """
     user = get_user_by_username(db, username)
     user_role = RoleEnum(user.role)
-    datos = get_ghibli_data(user_role)
+    datos = await get_ghibli_data(user_role)
     return datos

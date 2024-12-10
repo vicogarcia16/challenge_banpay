@@ -4,7 +4,6 @@ from db.database import get_db
 from db.db_ghibli import get_ghibli_data
 from db.db_user import get_user_by_username
 from schemas.user import RoleEnum
-from tools.exceptions import UserNotFoundError
 
 router = APIRouter(
     prefix="/ghibli",

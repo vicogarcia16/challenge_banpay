@@ -25,6 +25,8 @@ services:
     ports:
       - "8000:8000"
     container_name: fastapi-app
+    volumes:
+      - .:/app
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
